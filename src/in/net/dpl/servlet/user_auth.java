@@ -46,6 +46,15 @@ public class user_auth extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String emp_no=request.getSession().getAttribute("emp_no").toString();
+		
+		if(emp_no.equals("dpl_eps")){
+			
+			request.getRequestDispatcher("/WEB-INF/jsp/admin_home.jsp").forward(request, response);
+		}
+		else if(emp_no.length()>0){
+			request.getRequestDispatcher("/WEB-INF/jsp/user_home.jsp").forward(request, response);
+		}
 		
 			
 		

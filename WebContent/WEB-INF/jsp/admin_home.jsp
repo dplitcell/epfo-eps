@@ -39,9 +39,7 @@ function isEmail() {
 	}
 </script>
 
-<script>
-    history.forward();
-</script>
+
     
 </head>
 <body>
@@ -53,32 +51,32 @@ function isEmail() {
     <main>
         <div class="row">
         
-        <form name="user"  action="user_auth.dpl" method="post">
+        <form name="user"  action="#" method="post">
             
-            <div class="colm-form">
+            <div class="colm-form" align="center">
                 <div class="form-container" align="center">
                     <table width="353" border="1">
+                      
+                      
                       <tr>
-                        <td><a href="basic_info">Option Form Data Entry</a><td>
+                       <td><a href="basic_info" > Option Form Entry</a></td>
                       </tr>
                       <tr>
                        <td><a href="ListFormApp.dpl" > Option Form Print</a></td>
                       </tr>
                       <tr>
-                        <td><a href="UploadForm">Option Form Upload</a></td>
-                       
+                       <td><a href="Receipt" > Update Receipt Information</a></td>
                       </tr>
-                      <tr>
-                        <td><a href="UpdateCourier">Update Courier/Speed Post Information</a></td>
-                       
-                      </tr>
+                      
+                      
+                      
                     </table>
                     <p><br>
                       <br>
                     </p>
           </div>
          </form>       
-                <p align="center" class="style2">User id & Password are same as DPL Payroll's User id & Password </p>
+                <p align="center" class="style2">ADMIN  USER LOGIN</p>
       </div>
         </div>
     </main>

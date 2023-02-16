@@ -37,9 +37,7 @@ function isEmail() {
 	}
 </script>
 
-<script>
-    history.forward();
-</script>
+
     
 </head>
 <body>
@@ -53,7 +51,7 @@ function isEmail() {
         
         <form name="user"  action="admin_auth.dpl" method="post">
             
-            <div class="colm-form">
+            <div class="colm-form" align="center">
                 <div class="form-container" align="center">
                     <table width="353" border="1">
                       <tr>
@@ -75,7 +73,7 @@ function isEmail() {
                     </p>
           </div>
          </form>       
-                <p>For any query reach out to it@dpl.net.in</p>
+                <p>ADMIN LOGIN</p>
       </div>
         </div>
     </main>

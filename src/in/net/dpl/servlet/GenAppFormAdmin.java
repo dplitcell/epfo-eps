@@ -41,8 +41,8 @@ public class GenAppFormAdmin extends HttpServlet {
 		// TODO Auto-generated method stub
 		String emp_no=request.getParameter("emp_no").toString();
 		//String directory="d:/upload/"+app_id+"/";
-		String directory="d:/upload/eps/"+emp_no+"/";;
-		//String directory="/root/eps/upload/"+emp_no+"/";
+		//String directory="d:/upload/eps/"+emp_no+"/";;
+		String directory="/root/eps/upload/"+emp_no+"/";
 		
        
 		byte bytes[] = null;

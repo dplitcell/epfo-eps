@@ -57,7 +57,7 @@ public class GetEmployeeDetails extends HttpServlet {
     private EmployeeDomain retrieveEmployeeDetailsFromDatabase(int empNo) {
         // Connect to the database and retrieve the employee details based on the employee number
     	
-    	String query="select * from vw_eps_option where emp_no='"+empNo+"'";
+    	String query="select * from vw_eps_option where emp_no='"+empNo+"' ";
     	EmployeeDomain emp= new EmployeeDomain();
     	try{
 			

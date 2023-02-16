@@ -45,6 +45,10 @@ public class admin_auth extends HttpServlet {
 		if(emp_no.equals("dpl_eps")){
 			request.getRequestDispatcher("/WEB-INF/jsp/admin_home.jsp").forward(request, response);
 		}
+		
+		if(emp_no.equals("dpl_eps")){
+			request.getRequestDispatcher("/WEB-INF/jsp/user_login.jsp").forward(request, response);
+		}
 			
 		
 		

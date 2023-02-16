@@ -44,19 +44,6 @@ function isEmail() {
 </head>
 <body>
 
-<%
-// New location to be redirected
-
-String emp_no=request.getSession().getAttribute("emp_no").toString();
-
-if (emp_no.length()==0){
-
-String site = new String("http://dpl.net.in/epfo-eps");
-response.setStatus(response.SC_MOVED_TEMPORARILY);
-response.setHeader("Location", site); 
-}
-%>
-
 <div align="center">
                 
                 <h2 class="style1">Welcome to The Durgapur Projects Limited EPS Portal</h2>
@@ -64,32 +51,41 @@ response.setHeader("Location", site);
     <main>
         <div class="row">
         
-        <form name="user"  action="user_auth.dpl" method="post">
+        <form name="user"  action="receipt_handle.dpl" method="post">
             
             <div class="colm-form">
                 <div class="form-container" align="center">
                     <table width="353" border="1">
                       <tr>
-                        <td><a href="basic_info">Option Form Data Entry</a><td>
+                        <td width="121"><span class="style1">Emp No </span></td>
+                        <td width="216"><c:out value="${emp_code}" /><input type="hidden" name="emp_no" id="emp_no" value="${emp_code}"></td>
                       </tr>
                       <tr>
-                       <td><a href="GenAppForm.dpl" target="_blank"> Option Form Print</a></td>
+                        <td><span class="style1">Employee Name</span></td>
+                        <td><c:out value="${emp_name}" /><input type="hidden" name="emp_name" id="emp_name" value="${emp_name}"></td>
                       </tr>
                       <tr>
-                        <td><a href="UploadForm">Option Form Upload</a></td>
-                       
+                        <td><span class="style1">Application No</span></td>
+                        <td><c:out value="${app_no}" /><input type="hidden" name="app_no" id="app_no" value="${app_no}"></td>
                       </tr>
                       <tr>
-                        <td><a href="UpdateCourier">Update Courier/Speed Post Information</a></td>
-                       
+                        <td><span class="style1">Application Date</span></td>
+                        <td><c:out value="${app_date}" /><input type="hidden" name="app_date" id="app_no" value="${app_date}"></td>
+                      </tr>
+                      
+                      <tr>
+                        <td><span class="style1">Applicant Name</span></td>
+                        <td><c:out value="${app_name}" /><input type="hidden" name="app_name" id="app_name" value="${applicant}"></td>
+                      </tr>
+                      
+                      <tr>
+                        <td><span class="style1">Receipt Information (BY HAND/Courier Docket No)</span></td>
+                        <td><input type="text" name="docket_no" id="docket_no" ></td>
                       </tr>
                       <tr>
-                        <td><a href="AppStatus?emp_no=${sessionScope.emp_no}">Application Status</a></td>
-                       
-                      </tr>
-                      <tr>
-                        <td><a href="Logout">Logout</a></td>
-                       
+                        <td colspan="2"><div align="center">
+                          <input type="submit" value="Update">
+                        </div></td>
                       </tr>
                     </table>
                     <p><br>
@@ -97,7 +93,7 @@ response.setHeader("Location", site);
                     </p>
           </div>
          </form>       
-                <p align="center" class="style2">User id & Password are same as DPL Payroll's User id & Password </p>
+                
       </div>
         </div>
     </main>

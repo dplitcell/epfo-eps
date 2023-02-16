@@ -11,7 +11,7 @@ public class GetNextNumber {
 
     public static String getNext() {
     	
-    	String query="select eps_sr_no.nextval from dual;";
+    	String query="select eps_sr_no.nextval as record_count from dual";
     	int count=0;
     	try{
 			

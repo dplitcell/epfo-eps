@@ -62,7 +62,7 @@ function getEmployeeDetails() {
         url: "/epfo-eps/GetEmployeeDetails",
         data: { empNo: empNo },
         success: function(employee) {
-        	
+        	document.getElementById("empNo").readOnly=true;
             $("#employee_name").val(employee.empName);
             $("#department").val(employee.dept);
             $("#date_of_joining").val(employee.dateOfJoin);
@@ -84,7 +84,19 @@ function getEmployeeDetails() {
 }
 
 </script>
+<script>
+function loadEmp(){
+	
+	var user_id = "${emp_no}";
+	if(user_id!='dpl_eps'){
+		document.getElementById("empNo").value=user_id;
+		getEmployeeDetails();
+		
+	
+	 }  
+}
 
+</script>
 <script>
 $(document).ready(function() {
     $("#empNo").change(getEmployeeDetails);
@@ -103,10 +115,10 @@ $(document).ready(function() {
 .style5 {font-size: 14px}
 -->
 </style>
-<body>
+<body  onload="loadEmp()" >
 
-<div class="form-container" align="center">
-  <form action="handleOption" method="POST" >
+<div class="form-container" align="center" >
+  <form action="handleOption" method="POST">
     <table width="90%" border="1">
       <tr>
       <td height="43" colspan="2"><div align="center"><span class="style1">Ee</span><span class="style2">EMPLOYEE PENSION OPTION FORM- INPUT RELEVANT INFORMATION </span></div>      </tr>

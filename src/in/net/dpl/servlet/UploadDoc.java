@@ -56,24 +56,37 @@ public class UploadDoc extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		//String emp_no=request.getSession().getAttribute("emp_no").toString();
+		String emp_no=request.getSession().getAttribute("emp_no").toString();
 		
 		//TEST FILE UPLOAD
-		String emp_no="13550";
+		//String emp_no="13550";
 		
-		String directory="d:/upload/eps/"+emp_no;
-		//String directory="/root/eps/upload/"+emp_no;
+		//String directory="d:/upload/eps/"+emp_no;
+		String directory="/root/eps/upload/"+emp_no;
 		
 		//String UPLOAD_DIRECTORY = "/usr/aldc/upload/"+currDate+"/"+subforlder;
 		String UPLOAD_DIRECTORY=directory;
         //process only if its multipart content
     	File file = new File(UPLOAD_DIRECTORY); 
     	FileUtils.forceMkdir(file);
+    	//System.out.println("POST-"+request.getParameter("post_info"));
     	if(ServletFileUpload.isMultipartContent(request)){
-            try {
-                List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
-              
+    		System.out.println("****** INSIDE UPLOAD**********");
+    		try {
+                
+            	
+            	List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+                String post_info=null;
                 for(FileItem item : multiparts){
+                	System.out.println("Item Name-"+item.getFieldName());
+                	
+                	if(item.isFormField()){
+                		  
+                      post_info=item.getFieldName();
+                     System.out.println("POST-"+post_info);     
+                        
+                	}
+                	
                     if(!item.isFormField()){
                        
                        
@@ -81,7 +94,9 @@ public class UploadDoc extends HttpServlet {
                         String ext=item.getName().substring(item.getName().indexOf(".")+1);
                         
                         if((item.getSize()<534230) && ext.matches("pdf")){
-                        	System.out.println("Inside if");
+                        	//String post_info = request.getParameter("post_info");
+                        	//System.out.println("POST Info-"+post_info);
+                        	System.out.println("**Inside if**");
                         	item.write( new File(UPLOAD_DIRECTORY + File.separator + emp_no+".pdf"));
                         	Connection conn=new ConnDB().make_connection();
                     		try{
@@ -101,7 +116,7 @@ public class UploadDoc extends HttpServlet {
                             
                            //File uploaded successfully
                            request.setAttribute("message", "File Uploaded Successfully");
-                           request.getRequestDispatcher("/WEB-INF/jsp/doc_upload_success.jsp").forward(request, response);
+                           request.getRequestDispatcher("/WEB-INF/jsp/user_home.jsp").forward(request, response);
                         	
                         	
                         

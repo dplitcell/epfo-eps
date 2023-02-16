@@ -39,9 +39,7 @@ function isEmail() {
 	}
 </script>
 
-<script>
-    history.forward();
-</script>
+
     
 </head>
 <body>

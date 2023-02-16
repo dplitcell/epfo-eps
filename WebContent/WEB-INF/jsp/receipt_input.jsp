@@ -1,3 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
@@ -39,23 +49,12 @@ function isEmail() {
 	}
 </script>
 
-
+<script>
+    history.forward();
+</script>
     
 </head>
 <body>
-
-<%
-// New location to be redirected
-
-String emp_no=request.getSession().getAttribute("emp_no").toString();
-
-if (emp_no.length()==0){
-
-String site = new String("http://dpl.net.in/epfo-eps");
-response.setStatus(response.SC_MOVED_TEMPORARILY);
-response.setHeader("Location", site); 
-}
-%>
 
 <div align="center">
                 
@@ -64,32 +63,20 @@ response.setHeader("Location", site);
     <main>
         <div class="row">
         
-        <form name="user"  action="user_auth.dpl" method="post">
+        <form name="user"  action="search_receipt.dpl" method="post">
             
             <div class="colm-form">
                 <div class="form-container" align="center">
                     <table width="353" border="1">
                       <tr>
-                        <td><a href="basic_info">Option Form Data Entry</a><td>
+                        <td width="121"><span class="style1">Employee Number </span></td>
+                        <td width="216"><input type="text" name="emp_code" id="emp_code" ></td>
                       </tr>
+                      
                       <tr>
-                       <td><a href="GenAppForm.dpl" target="_blank"> Option Form Print</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="UploadForm">Option Form Upload</a></td>
-                       
-                      </tr>
-                      <tr>
-                        <td><a href="UpdateCourier">Update Courier/Speed Post Information</a></td>
-                       
-                      </tr>
-                      <tr>
-                        <td><a href="AppStatus?emp_no=${sessionScope.emp_no}">Application Status</a></td>
-                       
-                      </tr>
-                      <tr>
-                        <td><a href="Logout">Logout</a></td>
-                       
+                        <td colspan="2"><div align="center">
+                          <input type="submit" value="Submit">
+                        </div></td>
                       </tr>
                     </table>
                     <p><br>
@@ -105,5 +92,8 @@ response.setHeader("Location", site);
         <div class="footer-contents">
       </div>
     </footer>
+</body>
+</html>
+
 </body>
 </html>

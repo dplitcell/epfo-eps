@@ -25,20 +25,23 @@ input[type="text"], textarea {
    -webkit-border-radius: 15px;
 
 }
-.style5 {font-size: 24px}
+
+
+
+.style4 {font-size: 20px}
 </style>
 <title>Insert title here</title>
 </head>
 <body background="images/bc.jpeg">
 
 <p><br>
-  <a href="#">Home</a>
+  <a href="admin_auth.dpl">Home</a>
 <p>&nbsp;</p>
 
-<table width="60%" border="1" align="center">
+<table width="50%" border="1" align="center">
   <tr>
-    <th><span class="style5">Employee Number</span></th>
-    <th><span class="style5">Employee Name</span></th>
+    <th>Employee Number</th>
+    <th>Employee Name</th>
     
    
        
@@ -47,8 +50,12 @@ input[type="text"], textarea {
     
     <c:forEach var="msg" items="${list}">
   <tr>
-                   <td><a href="GenAppFormAdmin.dpl?emp_no=${msg.empNo}" class="style5">${msg.empNo}</a></td>
-                   <td><span class="style5">${msg.empName}</span></td>
+                   <td><a href="UploadAdmin.dpl?emp_no=${msg.empNo}">${msg.empNo}</a></td>
+                   <td>${msg.empName}</td>
+                  
+                   
+                   
+                   
   </tr>
             </c:forEach>  
 </table>

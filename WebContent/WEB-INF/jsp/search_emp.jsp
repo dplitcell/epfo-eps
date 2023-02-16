@@ -39,23 +39,12 @@ function isEmail() {
 	}
 </script>
 
-
+<script>
+    history.forward();
+</script>
     
 </head>
 <body>
-
-<%
-// New location to be redirected
-
-String emp_no=request.getSession().getAttribute("emp_no").toString();
-
-if (emp_no.length()==0){
-
-String site = new String("http://dpl.net.in/epfo-eps");
-response.setStatus(response.SC_MOVED_TEMPORARILY);
-response.setHeader("Location", site); 
-}
-%>
 
 <div align="center">
                 
@@ -64,32 +53,20 @@ response.setHeader("Location", site);
     <main>
         <div class="row">
         
-        <form name="user"  action="user_auth.dpl" method="post">
+        <form name="user"  action="search_emp.dpl" method="post">
             
             <div class="colm-form">
                 <div class="form-container" align="center">
                     <table width="353" border="1">
                       <tr>
-                        <td><a href="basic_info">Option Form Data Entry</a><td>
+                        <td width="121"><span class="style1">Employee No </span></td>
+                        <td width="216"><input type="text" name="emp_no" id="emp_no" ></td>
                       </tr>
+                      
                       <tr>
-                       <td><a href="GenAppForm.dpl" target="_blank"> Option Form Print</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="UploadForm">Option Form Upload</a></td>
-                       
-                      </tr>
-                      <tr>
-                        <td><a href="UpdateCourier">Update Courier/Speed Post Information</a></td>
-                       
-                      </tr>
-                      <tr>
-                        <td><a href="AppStatus?emp_no=${sessionScope.emp_no}">Application Status</a></td>
-                       
-                      </tr>
-                      <tr>
-                        <td><a href="Logout">Logout</a></td>
-                       
+                        <td colspan="2"><div align="center">
+                          <input type="submit" value="Search">
+                        </div></td>
                       </tr>
                     </table>
                     <p><br>

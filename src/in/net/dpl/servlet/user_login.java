@@ -26,7 +26,9 @@ public class user_login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    request.getRequestDispatcher("/WEB-INF/jsp/user_login.jsp").forward(request, response);
+	    
+		request.getSession().invalidate();
+		request.getRequestDispatcher("/WEB-INF/jsp/user_login.jsp").forward(request, response);
 
 	}
 

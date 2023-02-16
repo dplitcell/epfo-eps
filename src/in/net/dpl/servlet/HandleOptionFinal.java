@@ -51,11 +51,12 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     String appName= request.getParameter("applicant_name");
     String relation= request.getParameter("relation");
     String employmentStatus=request.getParameter("emp_status");
+    String user=request.getSession().getAttribute("emp_no").toString();
     
     String appRefNo=GetNextNumber.getNext();
     
     System.out.println("Application Reference No");
-    insertOptionData(employeeNumber, employeeName, department, dateOfJoining, epfAccountNumber, epsAccountNumber, uanNumber, mobileNumber, aadharNumber, add1, add2, city, dist, state, pin, email, altMob, ppoNo, date58Year, dateOfSuperannuation, bankIfsc, bankName, appRefNo,bankBranch,bankAccNo,appName,relation,employmentStatus);
+    insertOptionData(employeeNumber, employeeName, department, dateOfJoining, epfAccountNumber, epsAccountNumber, uanNumber, mobileNumber, aadharNumber, add1, add2, city, dist, state, pin, email.toLowerCase(), altMob, ppoNo, date58Year, dateOfSuperannuation, bankIfsc, bankName, appRefNo,bankBranch,bankAccNo,appName,relation,employmentStatus,user);
     
     request.setAttribute("ref_no", appRefNo);
     
@@ -75,10 +76,10 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     
 }
 
-	public void insertOptionData(String employeeNumber,String employeeName,String department,String dateOfJoining,String epfAccountNumber,String epsAccountNumber,String uanNumber,String mobileNumber,String aadharNumber,String add1,String add2 ,String city,String dist ,String state ,String pin ,String email,String altMob,String ppoNo,String date58Year,String dateOfSuperannuation,String bankIfsc,String bankName,String appRefNo, String bankBranch,String bankAccNo,String appName,String relation,String empStatus ){
+	public void insertOptionData(String employeeNumber,String employeeName,String department,String dateOfJoining,String epfAccountNumber,String epsAccountNumber,String uanNumber,String mobileNumber,String aadharNumber,String add1,String add2 ,String city,String dist ,String state ,String pin ,String email,String altMob,String ppoNo,String date58Year,String dateOfSuperannuation,String bankIfsc,String bankName,String appRefNo, String bankBranch,String bankAccNo,String appName,String relation,String empStatus,String user ){
 		
-		String insertOptionQuery = "INSERT INTO eps_option (emp_no, emp_name, dept, date_of_join,pf_no, fpf_no,uan_no, mobile, aadhar_no, add1, add2, city, district, state, pin, email_id, alt_mob_no,ppo_no, start_date_pension, date_retire, bank_ifsc, bank_ac_no, bank_name,bank_branch,application_no,application_date,app_status_code,applicant_name,relationship,emp_status) VALUES ('"+employeeNumber+"', '"+employeeName+"', '"+department+"',to_date('"+dateOfJoining+"','dd-mm-yyyy'), '"+epfAccountNumber+"', '"+epsAccountNumber+"', '"+uanNumber+"','"+mobileNumber+"', '"+aadharNumber+"', '"+add1+"', '"+add2+"', '"+city+"', '"+dist+"', '"+state+"', '"+pin+"', '"+email+"', '"+altMob+"', '"+ppoNo+"', to_date('"+date58Year+"','dd-mm-yyyy'),to_date('"+dateOfSuperannuation+"','dd-mm-yyyy'), '"+bankIfsc+"','"+bankAccNo+"', '"+bankName+"','"+bankBranch+"','"+appRefNo+"',sysdate,'1','"+appName+"','"+relation+"','"+empStatus+"')";
-		
+		//String insertOptionQuery = "INSERT INTO eps_option (emp_no, emp_name, dept, date_of_join,pf_no, fpf_no,uan_no, mobile, aadhar_no, add1, add2, city, district, state, pin, email_id, alt_mob_no,ppo_no, start_date_pension, date_retire, bank_ifsc, bank_ac_no, bank_name,bank_branch,application_no,application_date,app_status_code,applicant_name,relationship,emp_status) VALUES ('"+employeeNumber+"', '"+employeeName+"', '"+department+"',to_date('"+dateOfJoining+"','dd-mm-yyyy'), '"+epfAccountNumber+"', '"+epsAccountNumber+"', '"+uanNumber+"','"+mobileNumber+"', '"+aadharNumber+"', '"+add1+"', '"+add2+"', '"+city+"', '"+dist+"', '"+state+"', '"+pin+"', '"+email+"', '"+altMob+"', '"+ppoNo+"', to_date('"+date58Year+"','dd-mm-yyyy'),to_date('"+dateOfSuperannuation+"','dd-mm-yyyy'), '"+bankIfsc+"','"+bankAccNo+"', '"+bankName+"','"+bankBranch+"','"+appRefNo+"',sysdate,'1','"+appName+"','"+relation+"','"+empStatus+"')";
+		String insertOptionQuery = "INSERT INTO eps_option (emp_no, emp_name, dept, date_of_join,pf_no, fpf_no,uan_no, mobile, aadhar_no, add1, add2, city, district, state, pin, email_id, alt_mob_no,ppo_no, start_date_pension, date_retire, bank_ifsc, bank_ac_no, bank_name,bank_branch,application_no,application_date,app_status_code,applicant_name,relationship,emp_status,entered_by) VALUES ('"+employeeNumber+"', '"+employeeName+"', '"+department+"',to_date('"+dateOfJoining+"','dd-mm-yyyy'), '"+epfAccountNumber+"', '"+epsAccountNumber+"', '"+uanNumber+"','"+mobileNumber+"', '"+aadharNumber+"', '"+add1+"', '"+add2+"', '"+city+"', '"+dist+"', '"+state+"', '"+pin+"', '"+email+"', '"+altMob+"', '"+ppoNo+"', '"+date58Year+"','"+dateOfSuperannuation+"', '"+bankIfsc+"','"+bankAccNo+"', '"+bankName+"','"+bankBranch+"','"+appRefNo+"',sysdate,'1','"+appName+"','"+relation+"','"+empStatus+"','"+user+"')";
 		System.out.println("Insert Query-"+insertOptionQuery);
 		try{
 			

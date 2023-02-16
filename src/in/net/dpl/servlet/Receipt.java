@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class UploadForm
  */
-@WebServlet("/UploadForm")
-public class UploadForm extends HttpServlet {
+@WebServlet("/Receipt")
+public class Receipt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UploadForm() {
+    public Receipt() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +28,7 @@ public class UploadForm extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		request.getRequestDispatcher("/WEB-INF/jsp/doc_upload.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/receipt_input.jsp").forward(request, response);
 	}
 
 	/**

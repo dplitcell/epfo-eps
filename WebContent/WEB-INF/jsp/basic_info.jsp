@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+  <title>Employees' Full Pension Option Form</title>
 <script>
 
 function datevalidate_58() {
@@ -40,6 +40,119 @@ function datevalidate_retire() {
 	}
 
 </script>
+<style> 
+  input[type=date] {
+    width: 99.4%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    font-size: 1.5vw;
+    background-color: white ;
+    border-color: gray;
+    border: 1px solid black;
+  }
+  input[type=button] {
+    width: 60%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+      font-size: 1.5vw;
+      background-color: rgb(214, 217, 255);
+      border-color: black;
+      border: 1px solid black;
+  }
+  input[type=submit] {
+    width: 60%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+      font-size: 1.5vw;
+      background-color: rgb(214, 217, 255);
+      border-color: black;
+      border: 1px solid black;
+  }
+  input[type=text] {
+    width: 98.5%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    font-size: 1.5vw;
+    background-color: white ;
+    border-color: gray;
+    border: 1px solid black;
+  }
+  select {
+    width: 100%;
+    height:100%;
+    min-height: 100%;
+    max-height: 100%;
+    font-size: 1.5vw;
+    background-color: white ;
+    border-color: gray;
+    border: 1px solid black;
+  }
+  td, th {
+      border: 1px solid black;
+    border-collapse: collapse;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    padding-left: .1vw;
+    }
+  html {
+     height: 98%;
+    min-height: 98%;
+    max-height: 98%;
+  }
+  body {
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    font-size: 1.5vw;
+    background-image: url("resources/images/dpl.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 80vh;
+    background-position: 50% 10vh;
+  }
+  table {
+    border:1px solid black;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 66vw;
+    background-color:#F0FFFF;
+  }
+  #footer {
+    position: fixed;
+    bottom: 0;
+    width: 98.8%;
+    /* Height of the footer*/
+    height: 5vh;
+    background: bisque;
+  }
+  #formSubmit {
+    position: fixed;
+    border: 1px solid #000;
+    border-style: solid;
+    bottom: 5vh;
+    width: 98.7%;
+    height: 5vh;
+    background: #F0FFFF;
+  }
+  #addDiv {
+    position: fixed;
+    bottom: 10;
+    width: 98.8%;
+    /* Height of the footer*/
+    height: 11.5vh;
+  }
+  tr {
+    height: 5.7vh;
+    min-height: 5.7vh;
+    max-height: 5.7vh;
+  }
+</style>
+
+<!-- 
 <style type="text/css">
 input { font-size: 20px; }
 body { 
@@ -50,7 +163,7 @@ body {
 				background-position: 50%;
 				background-repeat: no-repeat;
  			}
-</style>
+</style> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -62,7 +175,7 @@ function getEmployeeDetails() {
         url: "/epfo-eps/GetEmployeeDetails",
         data: { empNo: empNo },
         success: function(employee) {
-        	
+        	document.getElementById("empNo").readOnly=true;
             $("#employee_name").val(employee.empName);
             $("#department").val(employee.dept);
             $("#date_of_joining").val(employee.dateOfJoin);
@@ -84,14 +197,26 @@ function getEmployeeDetails() {
 }
 
 </script>
+<script>
+function loadEmp(){
+	
+	var user_id = "${emp_no}";
+	if(user_id!='dpl_eps'){
+		document.getElementById("empNo").value=user_id;
+		getEmployeeDetails();
+		
+	
+	 }  
+}
 
+</script>
 <script>
 $(document).ready(function() {
     $("#empNo").change(getEmployeeDetails);
 });
 
 </script>
-<style type="text/css">
+<!-- <style type="text/css">
 <!--
 .style1 {
 	color: #FFFFFF;
@@ -101,15 +226,30 @@ $(document).ready(function() {
 .style2 {font-size: 24px; font-weight: bold;}
 .style4 {font-size: 18px}
 .style5 {font-size: 14px}
--->
-</style>
-<body>
+</style> -->
+<body  onload="loadEmp()" >
 
-<div class="form-container" align="center">
-  <form action="handleOption" method="POST" >
+<!-- <div class="form-container"  -->
+<div align="center" style="height: 98.5vh; overflow-y: auto;" >
+  <table>
+    <tr bgcolor = "#eeffcc">
+      <td style="width:7vw" align="center"><a href="user_auth.dpl">Home</a></td>
+      <td align="center"><b>The Duragpur Projects Limited</b></td>
+      <td style="width: 7vw" align="center"><a href="user_login.dpl">Logout</a></td>
+    </tr>
+</table>
+  
+
+  <form action="handleOption" method="POST">
     <table width="90%" border="1">
+      <tr style="height:.1vh">
+        <td style="width:40vw; border: none;"></td>
+        <td style="width:25vw; border: none;"></td>
+      </tr>
       <tr>
-      <td height="43" colspan="2"><div align="center"><span class="style1">Ee</span><span class="style2">EMPLOYEE PENSION OPTION FORM- INPUT RELEVANT INFORMATION </span></div>      </tr>
+      <td height="43" colspan="2" align="center" style="font-size: 3vh;font-style: italic;"><b>EMPLOYEE PENSION OPTION FORM- INPUT RELEVANT INFORMATION</b></td>
+      </tr>
+      <!-- <div align="center"><span class="style1"></span><span class="style2">EMPLOYEE PENSION OPTION FORM- INPUT RELEVANT INFORMATION </span></div></tr> -->
       <tr>
         <td width="39%"><span class="style4">Employee Number:
         </span>
@@ -118,41 +258,41 @@ $(document).ready(function() {
       <tr>
         <td><span class="style4">Employee Name:
         </span>
-        <td><input name="employee_name" type="text" id="employee_name" size="50" required></td>
+        <td><input name="employee_name" type="text" id="employee_name" size="50" readonly></td>
       </tr>
       <tr>
         <td><span class="style4">Department:
         </span>
-        <td><input name="department" type="text" id="department" size="70" required></td>
+        <td><input name="department" type="text" id="department" size="70" readonly></td>
       </tr>
       <tr>
         <td><span class="style4">Date of Joining in DPL:
         </span>
-        <td><input type="text" id="date_of_joining" name="date_of_joining" required></td>
+        <td><input type="text" id="date_of_joining" name="date_of_joining" readonly></td>
       </tr>
       <tr>
         <td><span class="style4">Employment Status:</span>
-        <td><input type="text" id="emp_status" name="emp_status" required></td>
+        <td><input type="text" id="emp_status" name="emp_status" readonly></td>
       </tr>
       <tr>
         <td><span class="style4">PF Account Number:
         </span>
-        <td><input type="text" id="pf_account_number" name="pf_account_number" required></td>
+        <td><input type="text" id="pf_account_number" name="pf_account_number" readonly></td>
       </tr>
       <tr>
         <td><span class="style4">FPF Number:
         </span>
-        <td><input type="text" id="fpf_account_number" name="fpf_account_number" required></td>
+        <td><input type="text" id="fpf_account_number" name="fpf_account_number" readonly></td>
       </tr>
       <tr>
         <td><span class="style4">UAN Number:
         </span>
-        <td><input type="text" id="uan_number" name="uan_number" required></td>
+        <td><input type="text" id="uan_number" name="uan_number" readonly></td>
       </tr>
       <tr>
         <td><span class="style4">Mobile Number:
         </span>
-        <td><input type="text" id="mobile_number" name="mobile_number" required></td>
+        <td><input type="text" id="mobile_number" name="mobile_number" ></td>
       </tr>
       <tr>
         <td><span class="style4">Aadhar Number:
@@ -167,7 +307,7 @@ $(document).ready(function() {
       <tr>
         <td><span class="style4">Address Line 2:
         </span>
-        <td><input type="text" id="add2" name="add2" required></td>
+        <td><input type="text" id="add2" name="add2" ></td>
       </tr>
       <tr>
         <td><span class="style4">City:
@@ -197,36 +337,36 @@ $(document).ready(function() {
       <tr>
         <td><span class="style4">Alternate Mobile No:
         </span>
-        <td><input type="text" id="alt_mob" name="alt_mob" required></td>
+        <td><input type="text" id="alt_mob" name="alt_mob" ></td>
       </tr>
       <tr>
         <td><span class="style4">PPO No:
         </span>
-        <td><input type="text" id="ppo_no" name="ppo_no" required></td>
+        <td><input type="text" id="ppo_no" name="ppo_no"></td>
       </tr>
       <tr>
         <td><span class="style4">Date of start of Pension(DD-MM-YYYY) </span></td>
-        <td><input type="text" id="date_58_year" name="date_58_year" onBlur="datevalidate_58()" required></td>
+        <td><input type="text" id="date_58_year" name="date_58_year"  ></td>
       </tr>
       <tr>
         <td><span class="style4">Date of Superannuation /Cessation of Service (DD-MM-YYYY)</span></td>
-        <td><input type="text" id="date_of_superannuation" name="date_of_superannuation" onBlur="datevalidate_retire()" required></td>
+        <td><input type="text" id="date_of_superannuation" name="date_of_superannuation" ></td>
       </tr>
       <tr>
         <td><span class="style4">Pension Disbursing Bank IFSC</span></td>
-        <td><input type="text" id="bank_ifsc" name="bank_ifsc" required></td>
+        <td><input type="text" id="bank_ifsc" name="bank_ifsc" ></td>
       </tr>
       <tr>
         <td><span class="style4">Pension Disbursing Bank Name</span></td>
-        <td><input type="text" id="bank_name" name="bank_name" required></td>
+        <td><input type="text" id="bank_name" name="bank_name" ></td>
       </tr>
       <tr>
         <td><span class="style4">Pension Disbursing Bank Branch</span></td>
-        <td><input type="text" id="bank_branch" name="bank_branch" required></td>
+        <td><input type="text" id="bank_branch" name="bank_branch" ></td>
       </tr>
       <tr>
         <td><span class="style4">Bank Account Number</span></td>
-        <td><input type="text" id="bank_acc_no" name="bank_acc_no" required></td>
+        <td><input type="text" id="bank_acc_no" name="bank_acc_no" ></td>
       </tr>
       <tr>
         <td><span class="style4">Applicant's Name</span></td>
