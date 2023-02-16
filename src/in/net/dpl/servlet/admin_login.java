@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class UploadForm
  */
-@WebServlet("/admin_login")
+@WebServlet("/admin")
 public class admin_login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

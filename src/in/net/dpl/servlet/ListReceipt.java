@@ -26,14 +26,14 @@ import java.util.*;
 /**
  * Servlet implementation class DisplayInvoice
  */
-@WebServlet("/list_receipt.dpl")
-public class ListForm extends HttpServlet {
+@WebServlet("/ListFormApp.dpl")
+public class ListReceipt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListForm() {
+    public ListReceipt() {
         super();
         // TODO Auto-generated constructor stub
     }

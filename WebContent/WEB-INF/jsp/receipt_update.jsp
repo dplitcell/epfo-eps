@@ -50,7 +50,7 @@ function isEmail() {
 </div>
     <main>
         <div class="row">
-        
+        <a href="admin_auth.dpl">ADMIN HOME</a>
         <form name="user"  action="receipt_handle.dpl" method="post">
             
             <div class="colm-form">
@@ -75,7 +75,7 @@ function isEmail() {
                       
                       <tr>
                         <td><span class="style1">Applicant Name</span></td>
-                        <td><c:out value="${app_name}" /><input type="hidden" name="app_name" id="app_name" value="${applicant}"></td>
+                        <td><c:out value="${applicant}" /><input type="hidden" name="app_name" id="app_name" value="${applicant}"></td>
                       </tr>
                       
                       <tr>

@@ -42,7 +42,7 @@ public class SearchReceipt extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String emp_code=request.getParameter("emp_code");
-		String query="select emp_name,application_no,to_char(application_date,'dd-mm-yyyy hh24:mi') application_date,applicant_name||' , '||relation) as applicant from eps_option where emp_no='"+emp_code+"' ";
+		String query="select emp_name,application_no,to_char(application_date,'dd-mm-yyyy hh24:mi') application_date,applicant_name||' , '||relationship as applicant from eps_option where emp_no='"+emp_code+"' and courier_info is null";
     	String empName=null;
     	String applicationNo=null;
     	String applicationDate=null;
@@ -70,7 +70,7 @@ public class SearchReceipt extends HttpServlet {
 			request.setAttribute("emp_name", empName);
 			request.setAttribute("app_no", applicationNo);
 			request.setAttribute("app_date", applicationDate);
-			request.setAttribute("applicant", applicationDate);
+			request.setAttribute("applicant", applicant);
 			
 			
 			

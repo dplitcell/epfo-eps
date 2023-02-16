@@ -97,7 +97,7 @@ response.setHeader("Location", site);
                     </p>
           </div>
          </form>       
-                <p align="center" class="style2">User id & Password are same as DPL Payroll's User id & Password </p>
+                <p align="center" class="style2">Please drop mail to it@dpl.net.in,  if you face any error </p>
       </div>
         </div>
     </main>

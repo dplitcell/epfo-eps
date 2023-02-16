@@ -378,13 +378,8 @@ $(document).ready(function() {
       </tr>
       <tr>
         <td colspan="2"><p align="center" class="style4"><strong>Declaration by Employee</strong></p>
-          <p align="justify" class="style5">            1. It is certified that immediately after joining THE DURGAPUR PROJECTS LIMITED, I had been contributing towards the Provident Fund on my actual wage/salary and an equal amount used to be contributed in my PF by the employer also as provided under Para 26(6) of EPF Scheme, 1952. It is to further certify that an amount @ 8.33% of the statutory ceiling limit Le. Rs.15,000/- pm (earlier Rs.5,000/ 6500) out of the Employer's Contribution has been remitted by my employer every monch towards EPS, 1995 since 16/11/1995/ the date of my joining, whichever is later.</p>
-          <p align="justify" class="style5">2. I do hereby opt for diverting 8.33% of my actual salary/wages out of Employer's Contribution from my PF A/c. towards Pension Fund (after adjusting the amount already remitted by the mployer to the Pension Fund upto the prescribed wage ceiling under the Act) from the date of joining EPS, 1995 till my attaining the age of 58 years. I hereby authorize, PF Trust of DPL to transfer the differential amount with interest accrued thus making me eligible for drawing pension on the basis of actual salary/wages instead of on the salary/wages fixed as per prevailing ceiling under the Act, in accordance with the aforesaid judgement.</p>
-          <p align="justify" class="style5">3.I also undertake that in case my corpus/balance in PF Account is insufficient to meet the aforesaid requirement, I am ready to pay the differential amount thus making me eligible for drawing pension on the basis of actual salary/wages instead of on the salary/wages as per prevailing celling under the Act in accordancewith the<br>
-        aforesaid jugement.</p>
-        <p align="justify" class="style5">4.I understand that the Joint Option Form submitted by me shall be subject to acceptance by EPFO. I further understand that the Option exercised is irrevocable at any later date, and no claim for change of Option shall be entertained or considered under any circumstances.</p>
-        <p align="justify" class="style5">5. I undertake that the Option exercised herein is Loject to the EPFO instructions/guidelines/directives that 
-        may be issued from time to time.</p></td>
+          <p align="justify" class="style5">I accept and submit the option form for full pension and I certify that aforesaid information is correct and I shall be solely responsible for any incorrect information submitted by me.</p></p>
+          </p></td>
       </tr>
       <tr>
         <td colspan="2"><div align="center">
