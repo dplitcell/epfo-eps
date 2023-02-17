@@ -22,6 +22,19 @@ function datevalidate_58() {
 	}
 
 </script>
+
+<script type="text/javascript">
+
+function populate_name() {
+
+	alert('Hi');
+	var d=document.getElementById("employee_name").value;
+
+	document.getElementById("applicant_name").value=d;
+	document.getElementById("relation").value="SELF";
+	
+}
+
 <script>
 
 function datevalidate_retire() {
@@ -191,6 +204,9 @@ function getEmployeeDetails() {
             $("#state").val(employee.state);
             $("#pin").val(employee.pin);
             $("#emp_status").val(employee.empStatus);
+            $("#applicant_name").val(employee.empName);
+            $("#relation").val("SELF");
+            
             
             }
     });
@@ -366,7 +382,7 @@ $(document).ready(function() {
       </tr>
       <tr>
         <td><span class="style4">Bank Account Number</span></td>
-        <td><input type="text" id="bank_acc_no" name="bank_acc_no" ></td>
+        <td><input type="text" id="bank_acc_no" name="bank_acc_no" onBlur="populate_name()"></td>
       </tr>
       <tr>
         <td><span class="style4">Applicant's Name</span></td>

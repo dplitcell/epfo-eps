@@ -69,6 +69,10 @@ function isEmail() {
                           <input type="submit" value="Login">
                         </div></td>
                       </tr>
+                      <tr>
+                        <td><span class="style1">Pension Circular</span></td>
+                        <td><a href="pension.pdf" target="_blank">Click Here</a></td>
+                      </tr>
                     </table>
                     <p><br>
                       <br>

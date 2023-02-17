@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * Servlet implementation class DisplayInvoice
  */
-@WebServlet("/list_receipt.dpl")
+@WebServlet("/ListFormApp.dpl")
 public class ListForm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

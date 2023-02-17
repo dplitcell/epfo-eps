@@ -68,6 +68,12 @@ function isEmail() {
                        <td><a href="Receipt" > Update Receipt Information</a></td>
                       </tr>
                       
+                      <tr>
+                       <td><a href="ListReceipt.dpl" > Print Receipt</a></td>
+                      </tr>
+                      
+                  
+                      
                       
                       
                     </table>

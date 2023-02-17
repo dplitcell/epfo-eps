@@ -35,13 +35,15 @@ input[type="text"], textarea {
 <body background="images/bc.jpeg">
 
 <p><br>
-  <a href="admin_auth.dpl">Home</a>
+  
 <p>&nbsp;</p>
 
 <table width="50%" border="1" align="center">
   <tr>
     <th>Employee Number</th>
     <th>Employee Name</th>
+    
+    
     
    
        
@@ -50,8 +52,9 @@ input[type="text"], textarea {
     
     <c:forEach var="msg" items="${list}">
   <tr>
-                   <td><a href="UploadAdmin.dpl?emp_no=${msg.empNo}">${msg.empNo}</a></td>
+                   <td><a href="receipt_print.dpl?emp_no=${msg.empNo}">${msg.empNo}</a></td>
                    <td>${msg.empName}</td>
+                   
                   
                    
                    

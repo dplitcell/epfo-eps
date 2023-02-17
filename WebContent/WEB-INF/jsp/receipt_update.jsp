@@ -70,7 +70,7 @@ function isEmail() {
                       </tr>
                       <tr>
                         <td><span class="style1">Application Date</span></td>
-                        <td><c:out value="${app_date}" /><input type="hidden" name="app_date" id="app_no" value="${app_date}"></td>
+                        <td><c:out value="${app_date}" /><input type="hidden" name="app_date" id="app_date" value="${app_date}"></td>
                       </tr>
                       
                       <tr>
@@ -81,6 +81,11 @@ function isEmail() {
                       <tr>
                         <td><span class="style1">Receipt Information (BY HAND/Courier Docket No)</span></td>
                         <td><input type="text" name="docket_no" id="docket_no" ></td>
+                      </tr>
+                      
+                      <tr>
+                        <td><span class="style1">Email id</span></td>
+                        <td><c:out value="${email}" /><input type="hidden" name="email" id="email" value="${email}"></td>
                       </tr>
                       <tr>
                         <td colspan="2"><div align="center">
