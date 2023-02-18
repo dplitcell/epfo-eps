@@ -131,7 +131,7 @@ function datevalidate_retire() {
     border:1px solid black;
     border-collapse: collapse;
     table-layout: fixed;
-    width: 66vw;
+    width: 80vw;
     background-color:#F0FFFF;
   }
   #footer {
@@ -163,6 +163,7 @@ function datevalidate_retire() {
     min-height: 5.7vh;
     max-height: 5.7vh;
   }
+.style1 {color: #FF0000}
 </style>
 
 <!-- 
@@ -257,9 +258,9 @@ $(document).ready(function() {
   
 
   <form action="handleOption" method="POST">
-    <table width="90%" border="1">
+    <table width="95%" border="1">
       <tr style="height:.1vh">
-        <td style="width:40vw; border: none;"></td>
+        <td width="58%" style="width:40vw; border: none;"></td>
         <td style="width:25vw; border: none;"></td>
       </tr>
       <tr>
@@ -267,9 +268,9 @@ $(document).ready(function() {
       </tr>
       <!-- <div align="center"><span class="style1"></span><span class="style2">EMPLOYEE PENSION OPTION FORM- INPUT RELEVANT INFORMATION </span></div></tr> -->
       <tr>
-        <td width="39%"><span class="style4">Employee Number:
+        <td><span class="style4">Employee Number:
         </span>
-        <td width="61%"><input type="text" id="empNo" name="empNo" required></td>
+        <td width="42%"><input type="text" id="empNo" name="empNo" required></td>
       </tr>
       <tr>
         <td><span class="style4">Employee Name:
@@ -358,30 +359,31 @@ $(document).ready(function() {
       <tr>
         <td><span class="style4">PPO No:
         </span>
+        (<span class="style1">Applicable only for Pensioners</span>) 
         <td><input type="text" id="ppo_no" name="ppo_no"></td>
       </tr>
       <tr>
-        <td><span class="style4">Date of start of Pension(DD-MM-YYYY) </span></td>
+        <td><span class="style4">Date of start of Pension(DD-MM-YYYY) (<span class="style1">Applicable only for Pensioners</span>) </span></td>
         <td><input type="text" id="date_58_year" name="date_58_year"  ></td>
       </tr>
       <tr>
-        <td><span class="style4">Date of Superannuation /Cessation of Service (DD-MM-YYYY)</span></td>
+        <td><span class="style4">Date of Superannuation /Cessation of Service (DD-MM-YYYY) (<span class="style1">Applicable only for Pensioners</span>) </span></td>
         <td><input type="text" id="date_of_superannuation" name="date_of_superannuation" ></td>
       </tr>
       <tr>
-        <td><span class="style4">Pension Disbursing Bank IFSC</span></td>
+        <td><span class="style4">Pension Disbursing Bank IFSC (<span class="style1">Applicable only for Pensioners</span>) </span></td>
         <td><input type="text" id="bank_ifsc" name="bank_ifsc" ></td>
       </tr>
       <tr>
-        <td><span class="style4">Pension Disbursing Bank Name</span></td>
+        <td><span class="style4">Pension Disbursing Bank Name (<span class="style1">Applicable only for Pensioners</span>) </span></td>
         <td><input type="text" id="bank_name" name="bank_name" ></td>
       </tr>
       <tr>
-        <td><span class="style4">Pension Disbursing Bank Branch</span></td>
+        <td><span class="style4">Pension Disbursing Bank Branch (<span class="style1">Applicable only for Pensioners</span>) </span></td>
         <td><input type="text" id="bank_branch" name="bank_branch" ></td>
       </tr>
       <tr>
-        <td><span class="style4">Bank Account Number</span></td>
+        <td><span class="style4">Bank Account Number (<span class="style1">Applicable only for Pensioners</span>) </span></td>
         <td><input type="text" id="bank_acc_no" name="bank_acc_no" onBlur="populate_name()"></td>
       </tr>
       <tr>

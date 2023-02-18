@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="option_form" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="0.9090909090909091"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="565"/>
+	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -82,7 +82,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[JOINT OPTION UNDER THE EMPLOYEES' PENSION SCHEME 2005]]></text>
+				<text><![CDATA[JOINT OPTION UNDER THE EMPLOYEES' PENSION SCHEME 1995]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="22" width="555" height="16"/>
@@ -96,21 +96,21 @@
 				<textElement>
 					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[TO,]]></text>
+				<text><![CDATA[TO]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="5" y="60" width="446" height="13"/>
 				<textElement textAlignment="Justified">
 					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[THE REGIONAL PROVIDENT FUND COMMIOSIONER,]]></text>
+				<text><![CDATA[THE REGIONAL PROVIDENT FUND COMMISSIONER]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="5" y="73" width="446" height="14"/>
 				<textElement textAlignment="Justified">
 					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[EMPLOYEES'S PROVIDENT FUND ORGANIZATION,]]></text>
+				<text><![CDATA[EMPLOYEES' PROVIDENT FUND ORGANIZATION]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="5" y="87" width="447" height="15"/>
@@ -124,7 +124,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="true" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[Sub: Joint Option under erstwhile Para 11(3) and Para (4) of Employees's Pension Scheme (EPS), 1995, based upon Hon'ble Supreme Court's Judgement  dated 04/11/2022 in SLP No: 8658-8659 of 2019.]]></text>
+				<text><![CDATA[Sub: Joint Option under erstwhile Para 11(3) and Para (4) of Employees' Pension Scheme (EPS), 1995, based upon Hon'ble Supreme Court's Judgement  dated 04/11/2022 in SLP No: 8658-8659 of 2019.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="5" y="170" width="549" height="43"/>
@@ -523,21 +523,21 @@
 				<textFieldExpression><![CDATA[$F{BANK_IFSC}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="111" y="788" width="114" height="13"/>
+				<reportElement x="101" y="788" width="131" height="13"/>
 				<textElement>
 					<font fontName="SansSerif"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{APPLICATION_NO}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="225" y="788" width="33" height="13"/>
+				<reportElement x="240" y="788" width="33" height="13"/>
 				<textElement textAlignment="Justified">
 					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Times-Roman"/>
 				</textElement>
 				<text><![CDATA[DATE:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="258" y="788" width="100" height="13"/>
+				<reportElement x="273" y="788" width="100" height="13"/>
 				<textElement>
 					<font fontName="SansSerif"/>
 				</textElement>
@@ -859,21 +859,21 @@
 				<text><![CDATA[APPLICATION NO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="232" y="787" width="38" height="15"/>
+				<reportElement x="255" y="787" width="38" height="15"/>
 				<textElement textAlignment="Justified">
 					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DATE:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="111" y="787" width="121" height="15"/>
+				<reportElement x="111" y="787" width="141" height="15"/>
 				<textElement>
 					<font fontName="SansSerif"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{APPLICATION_NO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="271" y="787" width="100" height="15"/>
+				<reportElement x="301" y="787" width="100" height="15"/>
 				<textElement>
 					<font fontName="SansSerif"/>
 				</textElement>
