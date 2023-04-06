@@ -58,13 +58,13 @@ public class ReceiptHandle extends HttpServlet {
 		SendMail mail=new SendMail();
 		String subject="Acknowldgement of Receipt of PF Joint Option form for Pension of EPFO ";
 		String body="To,\n Mr. "+applicant+",\nThis is to acknowldge the receipt of submission of Join Option Form for Employee Name:"+emp_name+" (Application No:"+app_no+", dated:"+ app_date+", \n\nRegards,\nPF Department\nThe Durgapur Projects Limited";
-
+		String user=request.getSession().getAttribute("emp_no").toString();
 		
 		
 		try{
 			
 			Connection conn=new ConnDB().make_connection();
-			String query="update EPS_OPTION set app_status_code='3',courier_info='"+docket_no+"',receipt_date=sysdate where emp_no='"+emp_no+"'";
+			String query="update EPS_OPTION set app_status_code='3',courier_info='"+docket_no+"',receipt_date=sysdate,receipt_by='"+user+"' where emp_no='"+emp_no+"'";
 
 			System.out.println(query);
 			conn.createStatement().executeUpdate(query);
@@ -123,7 +123,7 @@ public class ReceiptHandle extends HttpServlet {
 		
 		
 		
-		request.getRequestDispatcher("/WEB-INF/jsp/admin_home.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/receipt_input.jsp").forward(request, response);
 	}
 
 }

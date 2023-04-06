@@ -80,7 +80,7 @@ function isEmail() {
                       
                       <tr>
                         <td><span class="style1">Receipt Information (BY HAND/Courier Docket No)</span></td>
-                        <td><input type="text" name="docket_no" id="docket_no" ></td>
+                        <td><input type="text" name="docket_no" id="docket_no" value="BY HAND" autofocus></td>
                       </tr>
                       
                       <tr>
@@ -89,7 +89,7 @@ function isEmail() {
                       </tr>
                       <tr>
                         <td colspan="2"><div align="center">
-                          <input type="submit" value="Update">
+                          <input type="submit" value="Update" autofocus>
                         </div></td>
                       </tr>
                     </table>

@@ -60,7 +60,7 @@ function isEmail() {
                     <table width="353" border="1">
                       <tr>
                         <td width="121"><span class="style1">Employee No </span></td>
-                        <td width="216"><input type="text" name="emp_no" id="emp_no" ></td>
+                        <td width="216"><input type="text" name="emp_no" id="emp_no" autofocus></td>
                       </tr>
                       
                       <tr>

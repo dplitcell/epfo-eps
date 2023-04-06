@@ -44,6 +44,19 @@ function isEmail() {
 </head>
 <body>
 
+<%
+// New location to be redirected
+
+String emp_no=request.getSession().getAttribute("emp_no").toString();
+
+if (emp_no.length()==0){
+
+String site = new String("http://dpl.net.in/epfo-eps");
+response.setStatus(response.SC_MOVED_TEMPORARILY);
+response.setHeader("Location", site); 
+}
+%>
+
 <div align="center">
                 
                 <h2 class="style1">Welcome to The Durgapur Projects Limited EPS Portal</h2>
@@ -51,41 +64,35 @@ function isEmail() {
     <main>
         <div class="row">
         
-        <form name="user"  action="#" method="post">
+        <form name="user"  action="user_auth.dpl" method="post">
             
-            <div class="colm-form" align="center">
+            <div class="colm-form">
                 <div class="form-container" align="center">
                     <table width="353" border="1">
+                      <tr>
+                        <td><a href="basic_info">Option Form Data Entry</a><td>
+                      </tr>
+                      <tr>
+                       <td><a href="GenAppForm.dpl" target="_blank"> Option Form Print</a></td>
+                      </tr>
                       
                       
                       <tr>
-                       <td><a href="basic_info" > Option Form Entry</a></td>
+                        <td><a href="AppStatus?emp_no=${sessionScope.emp_no}">Application Status</a></td>
+                       
                       </tr>
                       <tr>
-                       <td><a href="ListFormApp.dpl" > Option Form Print</a></td>
+                        <td><a href="Logout">Logout</a></td>
+                       
                       </tr>
-                      <tr>
-                       <td><a href="Receipt" > Update Receipt Information</a></td>
-                      </tr>
-                      
-                      <tr>
-                       <td><a href="ListReceipt.dpl" > Print Receipt</a></td>
-                      </tr>
-                      <tr>
-                       <td><a href="ReceiptReport" > Receipt Log for DPL PF Department</a></td>
-                      </tr>
-                      
-                  
-                      
-                      
-                      
                     </table>
                     <p><br>
                       <br>
                     </p>
           </div>
          </form>       
-                <p align="center" class="style2">ADMIN  USER LOGIN</p>
+                <p align="center" class="style2">Please drop mail to it@dpl.net.in,  if you face any error </p>
+                <p align="center" class="style2">Signed Application form has to be positively submitted to dedicated counters at Administrative Building, Durgapur or through Speed Post to PF Department, DPL, strictly within 23/02/2023, as mentioned in the circular no: DPL/GM(HR&A)/2023/69 dated 16/02/2023 by GM (HR&A) </p>
       </div>
         </div>
     </main>

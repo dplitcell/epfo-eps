@@ -64,29 +64,23 @@ response.setHeader("Location", site);
     <main>
         <div class="row">
         
-        <form name="user"  action="user_auth.dpl" method="post">
+       
             
             <div class="colm-form">
                 <div class="form-container" align="center">
                     <table width="353" border="1">
                       <tr>
-                        <td><a href="basic_info">Option Form Data Entry</a><td>
+                        <td><a href="#" target="_blank">Circular No: Dated :</a><td>
                       </tr>
                       <tr>
-                       <td><a href="GenAppForm.dpl" target="_blank"> Option Form Print</a></td>
+                       <td><a href="#" target="_blank"> Reference Circulars in this matter</a></td>
                       </tr>
                       <tr>
-                        <td><a href="UploadForm">Option Form Upload</a></td>
+                        <td><a href="Undertaking?emp_no=${sessionScope.emp_no}">Download the Undertaking</a></td>
                        
                       </tr>
-                      <tr>
-                        <td><a href="UpdateCourier">Update Courier/Speed Post Information</a></td>
-                       
-                      </tr>
-                      <tr>
-                        <td><a href="AppStatus?emp_no=${sessionScope.emp_no}">Application Status</a></td>
-                       
-                      </tr>
+                      
+                      
                       <tr>
                         <td><a href="Logout">Logout</a></td>
                        
@@ -96,8 +90,9 @@ response.setHeader("Location", site);
                       <br>
                     </p>
           </div>
-         </form>       
+         
                 <p align="center" class="style2">Please drop mail to it@dpl.net.in,  if you face any error </p>
+                
       </div>
         </div>
     </main>

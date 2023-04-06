@@ -27,7 +27,7 @@ input[type="text"], textarea {
 }
 .style5 {font-size: 24px}
 </style>
-<title>Insert title here</title>
+<title>LIST</title>
 </head>
 <body background="images/bc.jpeg">
 

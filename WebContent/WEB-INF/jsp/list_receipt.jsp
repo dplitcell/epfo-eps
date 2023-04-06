@@ -30,7 +30,7 @@ input[type="text"], textarea {
 
 .style4 {font-size: 20px}
 </style>
-<title>Insert title here</title>
+<title>List Receipt</title>
 </head>
 <body background="images/bc.jpeg">
 

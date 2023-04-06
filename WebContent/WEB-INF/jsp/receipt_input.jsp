@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Receipt Input</title>
 </head>
 <body>
 
@@ -49,9 +49,7 @@ function isEmail() {
 	}
 </script>
 
-<script>
-    history.forward();
-</script>
+
     
 </head>
 <body>
@@ -70,7 +68,7 @@ function isEmail() {
                     <table width="353" border="1">
                       <tr>
                         <td width="121"><span class="style1">Employee Number </span></td>
-                        <td width="216"><input type="text" name="emp_code" id="emp_code" ></td>
+                        <td width="216"><input type="text" name="emp_code" id="emp_code" autofocus></td>
                       </tr>
                       
                       <tr>

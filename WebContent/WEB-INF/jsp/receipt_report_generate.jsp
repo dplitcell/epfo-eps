@@ -39,7 +39,9 @@ function isEmail() {
 	}
 </script>
 
-
+<script>
+    history.forward();
+</script>
     
 </head>
 <body>
@@ -51,41 +53,28 @@ function isEmail() {
     <main>
         <div class="row">
         
-        <form name="user"  action="#" method="post">
+        <form name="user"  action="receipt_report_handle.dpl" method="get">
             
-            <div class="colm-form" align="center">
+            <div class="colm-form">
                 <div class="form-container" align="center">
                     <table width="353" border="1">
-                      
-                      
                       <tr>
-                       <td><a href="basic_info" > Option Form Entry</a></td>
-                      </tr>
-                      <tr>
-                       <td><a href="ListFormApp.dpl" > Option Form Print</a></td>
-                      </tr>
-                      <tr>
-                       <td><a href="Receipt" > Update Receipt Information</a></td>
+                        <td width="121"><span class="style1">Receipt Date(DD-MM-YYYY)</span></td>
+                        <td width="216"><input type="text" name="receipt_date" id="receipt_date" ></td>
                       </tr>
                       
                       <tr>
-                       <td><a href="ListReceipt.dpl" > Print Receipt</a></td>
+                        <td colspan="2"><div align="center">
+                          <input type="submit" value="Search">
+                        </div></td>
                       </tr>
-                      <tr>
-                       <td><a href="ReceiptReport" > Receipt Log for DPL PF Department</a></td>
-                      </tr>
-                      
-                  
-                      
-                      
-                      
                     </table>
                     <p><br>
                       <br>
                     </p>
           </div>
          </form>       
-                <p align="center" class="style2">ADMIN  USER LOGIN</p>
+                <p align="center" class="style2">User id & Password are same as DPL Payroll's User id & Password </p>
       </div>
         </div>
     </main>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="eps_undertaking" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="375"/>
+	<parameter name="emp_no" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select a.*,b.uan_no,decode(b.add1,null,'',b.add1)||' '||decode(b.add2,null,'',b.add2)||' '||decode(b.city,null,'',b.city)||' '||decode(b.district,null,'',b.district)||' '||decode(b.state,null,'',b.state)||' '||decode(b.pin,null,'',b.pin) as address from (select a.emp_no,a.emp_name,a.fpf_no,b.desig,b.mobile_no
+from vw_eps_option a, app_vw_emp b
+where a.emp_no=$P{emp_no} and a.emp_no=b.emp_id and b.pfm='2') a, eps_option b
+where a.emp_no=b.emp_no(+)]]>
+	</queryString>
+	<field name="EMP_NO" class="java.math.BigDecimal"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="FPF_NO" class="java.lang.String"/>
+	<field name="DESIG" class="java.lang.String"/>
+	<field name="MOBILE_NO" class="java.lang.String"/>
+	<field name="UAN_NO" class="java.lang.String"/>
+	<field name="ADDRESS" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="767" splitType="Stretch">
+			<staticText>
+				<reportElement x="237" y="4" width="92" height="17"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[UNDERTAKING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="39" width="317" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(i) The Regional Provident Fund Commissioner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="58" width="306" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Employees Provident Fund Organisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="74" width="287" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(ii) The Durgapur Projects Limited]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="91" width="368" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[and The Durgapur Projects Limited Employees’ Provident Fund]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="132" width="11" height="20"/>
+				<textElement/>
+				<text><![CDATA[I, ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="132" width="306" height="20"/>
+				<textElement/>
+				<text><![CDATA[[Son/Daughter/Wife] of ________________________________ ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="151" width="552" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["presently residing at:"+$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="171" width="317" height="20"/>
+				<textElement/>
+				<text><![CDATA[and currently working in The Durgapur Projects Limited [DPL] as]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="171" width="235" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DESIG}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="191" width="238" height="20"/>
+				<textElement/>
+				<text><![CDATA[hereby declare and undertake as follows :-
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="232" width="552" height="365"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[1. I have read and understood the terms of Employees Pension Scheme, 1995 (‘Pension Scheme’) as amended from time to time including as it was before the amendment of 2014.
+
+2. I am aware of the Supreme Court judgement dated 04.11.2022 (in SLP (C) Nos. 8658-8659 of 2019)
+
+3.Pursuant to the aforesaid judgement dated 04.11.2022 and Employee Provident Fund Organisation circulars/orders/notifications etc., I have exercised the joint option under para 11(3) and 11(4) of the Pension Scheme.
+
+4. I agree and acknowledge that I will not be able to withdraw or modify my option once exercised, unless otherwise permitted by the Employees Provident Fund Organization or the applicable law.
+
+5. I undertake and agree to make payment of the due contribution along with interest up to the date of payment with Durgapur Projects Limited, Employees’ Provident Fund (EPF) Trust for deposit with the Employees Provident Fund Organization in terms of the Pension Scheme and any clarifications /notifications/circulars/orders in relation thereto, including any further payments as may be required, upon demand from EPFO or DPL EPF Trust or DPL without any delay or demur.
+
+6. In case, where DPL is required to make any payment on my behalf to EPFO owing to failure on my part to contribute the amount pursuant to join option exercised by me under para 11(3) & 11(4) of the Pension Scheme, I hereby permit DPL and/or DPL EPF Trust to recover any due payments to the Employee Provident Fund Organization in relation the Pension Scheme from any dues to me from DPL.
+
+7. I will not make DPL or DPL EPF Trust responsible or liable in any manner whatsoever for any act, commission or omission on the part of DPL or DPL EPF Trust in relation to my exercise of joint option under the Pension Scheme.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="600" width="552" height="34"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[8. I agree that DPL EPF Trust and/or DPL shall be entitled to initiate appropriate proceedings for recovery of any amount due in relation to aforesaid.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="641" width="238" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="662" width="96" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Name of Employee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="683" width="172" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Employee FPF No. WB/DGP/9206/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="705" width="42" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="725" width="41" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="743" width="41" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[UAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="104" y="661" width="254" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EMP_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="132" width="215" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{EMP_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="683" width="205" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FPF_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="704" width="510" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="724" width="124" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MOBILE_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="743" width="229" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{UAN_NO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="15" splitType="Stretch"/>
+	</summary>
+</jasperReport>
